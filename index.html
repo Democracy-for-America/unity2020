@@ -109,13 +109,9 @@
       if ( $("#form_col1").length && $("#form_col2").length ) {
         completed();
 
-        $( $("<p style='font-size: 12px !important; color: #888 !important; line-height: 1.2 !important'>Thank you for joining our campaign to nominate a progressive candidate. By providing your email address you consent to receive recurring emails from members of the Progressives Unite 2020 Coalition.</p>")).appendTo( $("#form_col2") );
-
-        $(".sms-disclaimer").attr("style", "display: block !important; font-size: 12px !important; line-height: 1.2 !important; color: #888 !important;");
-        $(".sms-disclaimer > *").attr("style", "color: #888 !important;");
+        $( $("<p style='font-size: 12px !important; color: #888 !important; line-height: 1.2 !important'>Thank you for joining our campaign to nominate a progressive candidate. By providing your email address and/or phone number you consent to receive recurring emails and mobile alerts from members of the Progressives Unite 2020 Coalition. Message & Data Rates May Apply. Text HELP for Info. Text STOP to opt out.</p>")).appendTo( $("#form_col1") );
 
         var referrer = getUrlParameter("referrer");
-
         if ( referrer.startsWith("group-bvm") || referrer.startsWith("group-presente") ) {
           // $(".control-group").remove()
         }
@@ -135,12 +131,6 @@
         $("input[name$='phone']").change(showSmsIfCompletePhone);
         $("input[name$='phone']").keyup(showSmsIfCompletePhone);
       }
-
-      $('.button-fb, .button-tw').click(function(){
-          var width = window.innerWidth;
-          var left = (width - 574)/2;
-          return !window.open(this.href, '_blank', 'height=436, width=574, top=100, left=' + left);
-      });
     }
   });
 </script>
