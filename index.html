@@ -36,8 +36,14 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="https://democracyforamerica.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
+  <!-- Social
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta property="og:title" content="Sign the 2020 Progressive Unity Pledge">
+  <meta name="description" property="og:description" content="We need to unite for a progressive president and work together to win.">
+  <meta property="og:url" content="https://democracy-for-america.github.io/unity2020">
+  <meta property="og:image" content="https://s3.amazonaws.com/actionkit.democracyforamerica/images/Screen_Shot_2019-12-14_at_2.05.08_PM.png">
 </head>
 <body>
 
@@ -129,6 +135,12 @@
         $("input[name$='phone']").change(showSmsIfCompletePhone);
         $("input[name$='phone']").keyup(showSmsIfCompletePhone);
       }
+
+      $('.button-fb, .button-tw').click(function(){
+          var width = window.innerWidth;
+          var left = (width - 574)/2;
+          return !window.open(this.href, '_blank', 'height=436, width=574, top=100, left=' + left);
+      });
     }
   });
 </script>
