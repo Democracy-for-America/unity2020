@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>Progressives Unite 2020</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -15,34 +15,84 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Lato:400,300,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Arvo:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/style-embed-v3.css">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    #form-comments { display: none; }
+  </style>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
-<body style="margin-top: 24px;">
+<body>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+  <div class="section blue-bg">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <h4 class="center arvo">TAKE THE 2020 PROGRESSIVE UNITY PLEDGE:</h4>
+          <h1 class="center">We need to unite for a progressive president and work together to win.</h1>
+          <h2 class="center">We pledge to make our case to the American people on why our chosen candidate is the best chance we have to beat Trump and we will focus our fight for the nomination against the corporate wing, instead of each other.</h2>
+        </div>
       </div>
     </div>
+  </div>
 
-    <link href='https://actionnetwork.org/css/style-embed-v3.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/v3/petition/joint-petition-test?format=js&source=widget'></script><div id='can-petition-area-joint-petition-test' style='width: 100%'><!-- this div is the target for our HTML insertion --></div>
+  <div class="section red-bg">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns">
+          <script src='https://actionnetwork.org/widgets/v3/petition/joint-petition-test?format=js&source=widget&clear_id=true'></script>
+          <div id='can-petition-area-joint-petition-test' style='width: 100%'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section blue-bg">
+    <div class="container">
+      <div class="row">
+        <div class="six columns offset-by-three">
+          <p class="center" style="padding: 12px; border: 1px solid #FFF;">Paid for by Democracy for America and not authorized by any candidate. Contributions to Democracy for America are not tax deductible for federal income tax purposes.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+  $(document).ready(function() {
+    var timer = setInterval(interval, 10);
+
+    function timerStop() {
+      clearInterval(timer);
+    }
+
+    function interval() {
+      if ( $(".check_radio_field > label").length && $("#d_sharing > ul > li").length ) {
+        $(".check_radio_field > label").appendTo( $("#d_sharing > ul > li") );
+        timerStop();
+      }
+    }
+  });
+</script>
 </body>
 </html>
