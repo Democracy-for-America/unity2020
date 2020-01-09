@@ -28,6 +28,7 @@
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/custom.js"></script>
 
   <style>
     #form-comments { display: none; }
@@ -35,7 +36,7 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="https://democracyforamerica.com/favicon/favicon-32x32.png">
 
 </head>
 <body>
@@ -59,7 +60,18 @@
       <div class="row">
         <div class="twelve columns">
           <script src='https://actionnetwork.org/widgets/v3/petition/joint-petition-test?format=js&source=widget&clear_id=true'></script>
-          <div id='can-petition-area-joint-petition-test' style='width: 100%'></div>
+          <div id='can-petition-area-joint-petition-test' style='display: none; width: 100%'></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="twelve columns">
+          <p class="center">
+            <br/>
+            <img src="images/black-voters-matter.png" style="height: 90px; display: inline-block; vertical-align: middle;">
+            <img src="images/democracy-for-america.png" style="height: 90px; display: inline-block; vertical-align: middle;">
+            <img src="images/presente.png" style="height: 60px; display: inline-block; vertical-align: middle;">
+          </p>
         </div>
       </div>
     </div>
@@ -81,16 +93,41 @@
 
 <script>
   $(document).ready(function() {
-    var timer = setInterval(interval, 10);
+    var timer = setInterval(fireOnceWhenLoaded, 10);
 
-    function timerStop() {
+    function completed() {
       clearInterval(timer);
     }
 
-    function interval() {
-      if ( $(".check_radio_field > label").length && $("#d_sharing > ul > li").length ) {
-        $(".check_radio_field > label").appendTo( $("#d_sharing > ul > li") );
-        timerStop();
+    function fireOnceWhenLoaded() {
+      if ( $("#form_col1").length && $("#form_col2").length ) {
+        completed();
+
+        $( $("<p style='font-size: 12px !important; color: #888 !important; line-height: 1.2 !important'>Thank you for joining our campaign to nominate a progressive candidate. By providing your email address you consent to receive recurring emails from members of the Progressives Unite 2020 Coalition.</p>")).appendTo( $("#form_col2") );
+
+        $(".sms-disclaimer").attr("style", "display: block !important; font-size: 12px !important; line-height: 1.2 !important; color: #888 !important;");
+        $(".sms-disclaimer > *").attr("style", "color: #888 !important;");
+
+        var referrer = getUrlParameter("referrer");
+
+        if ( referrer.startsWith("group-bvm") || referrer.startsWith("group-presente") ) {
+          // $(".control-group").remove()
+        }
+
+        $("#can-petition-area-joint-petition-test").show();
+
+        window.smsRevealed = false;
+
+        showSmsIfCompletePhone = function() {
+          if ( $("input[name$='phone']").val().replace(/[^0-9]/g,"").length >= 10 ) {
+            if(!window.smsRevealed) { $("input[name='sms_opt_in']").attr('checked', true); }
+            window.smsRevealed = true;
+            $(".control-group.checkbox_group_wrap").slideDown();
+          }
+        };
+
+        $("input[name$='phone']").change(showSmsIfCompletePhone);
+        $("input[name$='phone']").keyup(showSmsIfCompletePhone);
       }
     }
   });

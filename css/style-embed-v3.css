@@ -62,7 +62,7 @@
     transition:all .25s linear!important;
     cursor:pointer!important;
     color:#fff!important;
-    background-color:#cd3a18!important;
+    background-color:#a56d02!important;
     text-align:center!important;
     outline:none!important;
     box-sizing:border-box!important;
@@ -497,7 +497,7 @@ body.can_embed,body.can_fundraising_widget{
     margin:0!important
 }
 #can_embed_form #d_sharing{
-    display:block!important;
+    display:none!important;
     line-height:15px!important;
     font-size:11px!important;
     color:#909090!important;
