@@ -3,6 +3,7 @@ body { color: #FFF; }
 .section { padding: 3em 0px; }
 .blue-bg { background-color: #228; }
 .red-bg { background-color: #822; }
+.white-text { color: #FFF !important; }
 .center { text-align: center !important; }
 .arvo { font-family: "Arvo" !important; }
 .lato { font-family: "Lato" !important; }
